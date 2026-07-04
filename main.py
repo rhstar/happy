@@ -7,5 +7,8 @@ api_key = os.getenv("DART_API_KEY")
 
 dart = OpenDartReader(api_key)
 
-company_info = dart.company('삼성전자')
-print(company_info)
+# 최대주주 변동 이력 조회 (예: 삼성전자, 2023년)
+df = dart.report('005930', '최대주주변동', 2023)
+print(df)
+
+# python main.py
