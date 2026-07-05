@@ -16,7 +16,7 @@ dart = OpenDartReader(os.getenv("DART_API_KEY"))
 import pandas as pd
 
 # 1. 코스닥 상장사 목록 로드
-kosdaq = pd.read_html("data/kosdaq_listed.xls", encoding='euc-kr')[0]
+kosdaq = pd.read_html("data/코스닥_상장.xls", encoding='euc-kr')[0]
 #종목코드를 6자리로 변환
 kosdaq['종목코드'] = kosdaq['종목코드'].astype(str).str.zfill(6)
 

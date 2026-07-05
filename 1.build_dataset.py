@@ -10,7 +10,7 @@ risky = risky[risky['폐지일자'].dt.year >= 2015].copy()
 print(f"위험 그룹 (2015년 이후 폐지): {len(risky)}개")
 
 # ===== 2. 정상 그룹: 위험과 동일 수로 재추출 =====
-kosdaq = pd.read_html("data/kosdaq_listed.xls", encoding='euc-kr')[0]
+kosdaq = pd.read_html("data/코스닥_상장.xls", encoding='euc-kr')[0]
 kosdaq['종목코드'] = kosdaq['종목코드'].astype(str).str.zfill(6)
 kosdaq = kosdaq[~kosdaq['회사명'].str.contains('스팩', na=False)]
 kosdaq = kosdaq[kosdaq['종목코드'].str.match(r'^\d{6}$')]
