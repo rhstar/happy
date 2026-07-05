@@ -1,9 +1,5 @@
-import pandas as pd
-import os
-
 DATA_DIR = "data"
 
-import pandas as pd
 
 
 def load_kind_html(filename):

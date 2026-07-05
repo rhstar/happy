@@ -1,10 +1,6 @@
 import pandas as pd
 df = pd.read_html("data/상장폐지현황.xls", encoding='euc-kr')[0]
 
-# 폐지사유별 건수 집계 (많은 순)
-# print(df['폐지사유'].value_counts())
-
-
 # 상위 40개 사유를 전체 텍스트로 출력 (잘림 없이)
 # pd.set_option('display.max_rows', 40)
 # pd.set_option('display.max_colwidth', None)  # 텍스트 잘림 방지
@@ -56,9 +52,14 @@ if __name__ == '__main__':
     print(f"\n위험 폐지 비율: {prepared['is_risky_delisting'].mean():.1%}")
     print()
 
-    # 정상군에 아직 이상한 게 남아있는지 재확인
-    # print("=== 스팩 제외 후 비정상 폐지 예시 ===")
-    # print(prepared[prepared['is_risky_delisting'] == 1][['회사명', '폐지사유']].head(15).to_string())
-    # print("=== 스팩 제외 후 정상 폐지 예시 ===")
-    # print(prepared[prepared['is_risky_delisting'] == 0][['회사명', '폐지사유']].head(100).to_string())
+    # 위험 폐지 기업만 추출 (레이블 1)
+    risky = prepared[prepared['is_risky_delisting'] == 1][['회사명', '종목코드', '폐지일자', '폐지사유']].copy()
+    risky['label'] = 1
+
+    # 종목코드를 6자리 문자열로 정규화 (앞자리 0 보존)
+    risky['종목코드'] = risky['종목코드'].astype(str).str.zfill(6)
+
+    risky.to_csv("data/labeled_risky.csv", index=False, encoding='utf-8-sig')
+    print(f"위험 폐지 기업 {len(risky)}개 저장 완료 → data/labeled_risky.csv")
+    print(risky.head())
 
