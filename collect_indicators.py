@@ -20,7 +20,7 @@ EMBEZZLE_CODES = load_kind_codes("코스닥_횡령.xls")        # 지표6
 def collect_indicators(corp_code, ref_date):
     """한 기업의 6개 지표를 모두 수집."""
     ref = pd.to_datetime(ref_date)
-    start = (ref - pd.DateOffset(years=5)).strftime('%Y-%m-%d')
+    start = (ref - pd.DateOffset(years=2)).strftime('%Y-%m-%d')
     end = ref.strftime('%Y-%m-%d')
 
     result = {
@@ -51,7 +51,6 @@ def collect_indicators(corp_code, ref_date):
 
     return result
 
-
 if __name__ == '__main__':
     dataset = pd.read_csv("data/dataset.csv", dtype={'종목코드': str})
     dataset['종목코드'] = dataset['종목코드'].str.zfill(6)
@@ -60,25 +59,17 @@ if __name__ == '__main__':
     total = len(dataset)
 
     for i, row in dataset.iterrows():
-        code = row['종목코드']
-        ref = row['ref_date']
-        name = row['회사명']
-
-        indicators = collect_indicators(code, ref)
-        indicators['종목코드'] = code
-        indicators['회사명'] = name
+        indicators = collect_indicators(row['종목코드'], row['ref_date'])
+        indicators['종목코드'] = row['종목코드']
+        indicators['회사명'] = row['회사명']
         indicators['label'] = row['label']
         results.append(indicators)
 
-        # 진행상황 출력 (10개마다)
-        if (i + 1) % 10 == 0:
-            print(f"진행: {i+1}/{total} ({name})")
-
-        # API 부하 방지: 0.5초 대기
+        if (i + 1) % 20 == 0:
+            print(f"진행: {i+1}/{total}")
         time.sleep(0.5)
 
-    # 결과를 DataFrame으로 저장
     features = pd.DataFrame(results)
     features.to_csv("data/features.csv", index=False, encoding='utf-8-sig')
-    print(f"\n완료! {len(features)}개 기업 지표 수집 → data/features.csv")
+    print(f"\n완료! {len(features)}개 → data/features.csv")
     print(features.head())

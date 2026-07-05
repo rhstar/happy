@@ -1,6 +1,6 @@
+import pandas as pd
+
 DATA_DIR = "data"
-
-
 
 def load_kind_html(filename):
     """KIND에서 다운로드한 HTML 위장 xls 파일을 읽는다"""
@@ -27,4 +27,3 @@ if __name__ == '__main__':
             print(f"[읽기 실패] {e}")
 
 
-import pandas as pd
