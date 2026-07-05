@@ -1,3 +1,7 @@
 .venv/
 .env
 docs_cache/
+data/executive_matches.csv
+data/executive_matches_all.csv
+data/final_flagged.csv
+data/risky_executives.csv
