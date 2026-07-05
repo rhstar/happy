@@ -1,6 +1,8 @@
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.inspection import permutation_importance
 
 # ===== 1. 데이터 로드 =====
 features = pd.read_csv("data/features.csv")
@@ -36,3 +38,18 @@ scores = cross_val_score(model, X, y, cv=cv, scoring='roc_auc')
 print("=== 5-Fold 교차검증 (ROC-AUC) ===")
 print(f"각 fold: {scores.round(3)}")
 print(f"평균: {scores.mean():.3f} (±{scores.std():.3f})")
+
+
+# 전체 데이터로 모델 학습 (importance 추출용)
+model.fit(X, y)
+
+# --- 1. MDI (기본 importance) ---
+mdi = pd.Series(model.feature_importances_, index=FEATURE_COLS).sort_values(ascending=False)
+print("=== MDI Feature Importance ===")
+print(mdi.round(3))
+
+# --- 2. Permutation importance ---
+perm = permutation_importance(model, X, y, n_repeats=30, random_state=42, scoring='roc_auc')
+perm_series = pd.Series(perm.importances_mean, index=FEATURE_COLS).sort_values(ascending=False)
+print("\n=== Permutation Importance ===")
+print(perm_series.round(3))
