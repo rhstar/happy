@@ -16,24 +16,24 @@ dart = OpenDartReader(os.getenv("DART_API_KEY"))
 
 
 def get_executives(corp_code, ref_year):
-    """폐지 전 2년 우선, 없으면 최근 2개 연도의 임원 수집."""
+    """폐지 전 5~6개 사업연도의 임원을 모두 수집."""
     collected = []
-    for year in range(ref_year, ref_year - 4, -1):
+    for year in range(ref_year, ref_year - 6, -1):
         try:
             df = dart.report(corp_code, '임원', year)
             if df is not None and len(df) > 0:
                 df = df[['corp_name', 'nm', 'birth_ym', 'ofcps',
                          'rgist_exctv_at', 'main_career']].copy()
                 df['source_year'] = year
+                df['years_before_delisting'] = ref_year - year + 1
                 collected.append(df)
-                if len(collected) >= 2:
-                    break
         except Exception:
             continue
 
     if not collected:
         return None
     result = pd.concat(collected, ignore_index=True)
+    result = result.sort_values('years_before_delisting')
     result = result.drop_duplicates(subset=['nm', 'birth_ym'])
     return result
 
@@ -61,9 +61,12 @@ if __name__ == '__main__':
 
     if all_execs:
         result = pd.concat(all_execs, ignore_index=True)
-        result.to_csv("data/risky_executives.csv", index=False, encoding='utf-8-sig')
-        print(f"\n위험 기업 임원 {len(result)}명 수집 (중복 포함)")
-        print(f"고유 인물: {result[['nm', 'birth_ym']].drop_duplicates().shape[0]}명")
-        print(result[['위험기업', 'nm', 'birth_ym', 'ofcps']].head(10).to_string(index=False))
-    else:
-        print("수집 실패")
+
+        # 5년 전체 버전
+        result.to_csv("data/risky_executives_5y.csv", index=False, encoding='utf-8-sig')
+        # 2년 이내 버전
+        result_2y = result[result['years_before_delisting'] <= 2]
+        result_2y.to_csv("data/risky_executives_2y.csv", index=False, encoding='utf-8-sig')
+
+        print(f"\n[5년] 총 {len(result)}명, 고유 {result[['nm', 'birth_ym']].drop_duplicates().shape[0]}명")
+        print(f"[2년] 총 {len(result_2y)}명, 고유 {result_2y[['nm', 'birth_ym']].drop_duplicates().shape[0]}명")
