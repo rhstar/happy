@@ -1,6 +1,6 @@
 #경영진의 중복 존재를 감지
 '''
-1. 위험 폐지 기업 124개의 임원 명단 수집 (DART)
+1. 실질심사 위험기업 224개의 임원 명단 수집 (DART)
 2. 현재 상장사의 임원 명단 수집 (DART)
 3. 두 명단을 이름으로 매칭 → 겹치는 사람 찾기
 4. 동명이인 걸러내기 위해 생년월일 등 추가 확인
@@ -39,7 +39,7 @@ def get_executives(corp_code, ref_year):
 
 
 if __name__ == '__main__':
-    # 위험 폐지 기업 목록
+    # 위험기업(실질심사 대상) 목록
     risky = pd.read_csv("data/dataset.csv", dtype={'종목코드': str})
     risky = risky[risky['label'] == 1].copy()
     risky['종목코드'] = risky['종목코드'].str.zfill(6)

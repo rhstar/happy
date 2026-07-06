@@ -7,18 +7,9 @@ from opendartreader import OpenDartReader
 load_dotenv()
 dart = OpenDartReader(os.getenv("DART_API_KEY"))
 
-# KIND 파일을 미리 한 번만 로드 (종목코드 집합으로)
-def load_kind_codes(filename):
-    df = pd.read_html(f"input_files/{filename}", encoding='euc-kr')[0]
-    codes = df['종목코드'].astype(str).str.zfill(6)
-    return set(codes)
-
-UNFAITHFUL_CODES = load_kind_codes("불성실공시법인.xls")  # 지표5
-EMBEZZLE_CODES = load_kind_codes("코스닥_횡령.xls")        # 지표6
-
 
 def collect_indicators(corp_code, ref_date):
-    """한 기업의 6개 지표를 모두 수집."""
+    """한 기업의 4개 지표를 모두 수집."""
     ref = pd.to_datetime(ref_date)
     start = (ref - pd.DateOffset(years=2)).strftime('%Y-%m-%d')
     end = ref.strftime('%Y-%m-%d')
@@ -28,8 +19,6 @@ def collect_indicators(corp_code, ref_date):
         'n_capital_increase': 0,
         'n_cb': 0,
         'n_collateral': 0,
-        'has_unfaithful': 0,   # 지표5: 불성실공시법인 지정 여부
-        'has_embezzle': 0,     # 지표6: 횡령·배임 여부
     }
 
     # --- DART 지표 (1~4) ---
@@ -44,11 +33,7 @@ def collect_indicators(corp_code, ref_date):
             result['n_collateral'] = int(titles.str.contains('담보제공계약').sum())
     except Exception as e:
         print(f"  [공시조회 실패] {corp_code}: {e}")
-
-    # --- KIND 지표 (5~6): 파일 매칭 ---
-    result['has_unfaithful'] = int(corp_code in UNFAITHFUL_CODES)
-    result['has_embezzle'] = int(corp_code in EMBEZZLE_CODES)
-
+        
     return result
 
 if __name__ == '__main__':
