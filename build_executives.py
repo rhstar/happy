@@ -34,7 +34,7 @@ def get_executives(corp_code, ref_year):
         return None
     result = pd.concat(collected, ignore_index=True)
     result = result.sort_values('years_before_delisting')
-    result = result.drop_duplicates(subset=['nm', 'birth_ym'])
+    result = result.drop_duplicates(subset=['nm', 'birth_ym'], keep='first')
     return result
 
 
