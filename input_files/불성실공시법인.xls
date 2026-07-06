@@ -1,0 +1,1767 @@
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>불성실공시법인(EXCEL)</title>
+</head>
+<body>
+<!-- 게시판 start -->
+<table cellpadding="0" cellspacing="1" class="bbs_tb" border="1">
+	
+	<col width="5%" />
+	<col width="15%" />
+	<col width="10%" />
+	<col width="5%" />
+	<col width="10%" />
+	<col width="12%" />
+	<col width="10%" />
+	<col width="10%" />
+	<col width="26%" />
+	<tr>
+		<th height="25" bgcolor="#66FF99">번호</th>
+		<th bgcolor="#66FF99">회사명</th>
+		<th bgcolor="#66FF99">종목코드</th>
+		<th bgcolor="#66FF99">벌점</th>
+		<th bgcolor="#66FF99">제재금(만원)</th>
+		<th bgcolor="#66FF99">공시책임자등 교체요구</th>		
+		<th bgcolor="#66FF99">불성실유형</th>
+		<th bgcolor="#66FF99">지정일</th>
+		<th bgcolor="#66FF99">지정사유</th>
+	</tr>
+	
+		
+			
+				
+				
+				
+				
+				
+				
+				<tr class="first">
+					<td style="text-align:center;">78</td>
+					<td>엑시온그룹</td>
+					<td style="mso-number-format:'@';text-align:center;">069920</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-06-30
+					</td>
+					<td style="text-align:left;">유상증자결정(제3자배정) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">77</td>
+					<td>다원시스</td>
+					<td style="mso-number-format:'@';text-align:center;">068240</td>
+					<td style='mso-number-format:'@';text-align:right;'>24.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>5,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-06-30
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 6건 
+      - 유상증자결정 철회 
+      - 단일판매ㆍ공급계약해지 
+      - 단일판매ㆍ공급계약해지 
+      - 단일판매ㆍ공급계약해지 
+      - 단일판매ㆍ공급계약해지 
+      - 단일판매ㆍ공급계약해지 
+      
+ㅇ 공시불이행 1건 
+      - 사채원리금 미지급발생 지연공시 
+
+ㅇ 공시변경 1건 
+      - 단일판매·공급계약 계약 금액 50% 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">76</td>
+					<td>엑스플러스</td>
+					<td style="mso-number-format:'@';text-align:center;">373200</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-06-30
+					</td>
+					<td style="text-align:left;">금전대여결정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">75</td>
+					<td>케어젠</td>
+					<td style="mso-number-format:'@';text-align:center;">214370</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-06-30
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 1건 
+  - 단일판매·공급계약 해지 
+    
+ㅇ 공시변경 1건   
+  - 단일판매·공급계약금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">74</td>
+					<td>CG인바이츠</td>
+					<td style="mso-number-format:'@';text-align:center;">083790</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-06-25
+					</td>
+					<td style="text-align:left;">단일판매ㆍ공급계약금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">73</td>
+					<td>버킷스튜디오</td>
+					<td style="mso-number-format:'@';text-align:center;">066410</td>
+					<td style='mso-number-format:'@';text-align:right;'>8.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-06-16
+					</td>
+					<td style="text-align:left;">최대주주 변경을 수반하는 주식양수도 계약 해제ㆍ취소 등</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">72</td>
+					<td>CSA 코스믹</td>
+					<td style="mso-number-format:'@';text-align:center;">083660</td>
+					<td style='mso-number-format:'@';text-align:right;'>4.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-06-12
+					</td>
+					<td style="text-align:left;">단일판매ㆍ공급계약금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">71</td>
+					<td>핀텔</td>
+					<td style="mso-number-format:'@';text-align:center;">291810</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>6,400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-06-08
+					</td>
+					<td style="text-align:left;"> - 최대주주 변경을 수반하는 주식양수도 계약 해제ㆍ취소 등 
+ - 주주총회소집결의(임시주주총회) 철회 
+ - 유상증자결정(제3자배정) 철회 
+ - 전환사채권발행결정(제3회차) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">70</td>
+					<td>이렘</td>
+					<td style="mso-number-format:'@';text-align:center;">009730</td>
+					<td style='mso-number-format:'@';text-align:right;'>4.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-05-27
+					</td>
+					<td style="text-align:left;">선급금 지급 결정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">69</td>
+					<td>아이로보틱스</td>
+					<td style="mso-number-format:'@';text-align:center;">066430</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-05-21
+					</td>
+					<td style="text-align:left;">유상증자결정(제3자배정) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">68</td>
+					<td>엔켐</td>
+					<td style="mso-number-format:'@';text-align:center;">348370</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-05-21
+					</td>
+					<td style="text-align:left;">수시공시의무 관련사항 공정공시 미이행</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">67</td>
+					<td>인크레더블버즈</td>
+					<td style="mso-number-format:'@';text-align:center;">064090</td>
+					<td style='mso-number-format:'@';text-align:right;'>9.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-05-18
+					</td>
+					<td style="text-align:left;">ㅇ 공시불이행 1건 
+       - 대표이사 변경 지연공시 
+
+ㅇ 공시번복 2건 
+       - 타법인 주식 및 출자증권 취득결정(종속회사의 주요경영사항) 철회 
+       - 유상증자결정(종속회사의 주요경영사항) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">66</td>
+					<td>NHN벅스</td>
+					<td style="mso-number-format:'@';text-align:center;">104200</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-05-14
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 1건 
+      - 최대주주 변경을 수반하는 주식양수도 계약 해제ㆍ취소 등 
+
+ㅇ 공시불이행 1건 
+      - 소송 등의 제기·신청 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">65</td>
+					<td>앱튼</td>
+					<td style="mso-number-format:'@';text-align:center;">270520</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-05-11
+					</td>
+					<td style="text-align:left;">유상증자결정(제3자배정) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">64</td>
+					<td>씨엔알리서치</td>
+					<td style="mso-number-format:'@';text-align:center;">359090</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-05-07
+					</td>
+					<td style="text-align:left;">ㅇ 공시불이행 1건 
+       - 단일판매·공급계약체결 정정 지연공시
+ 
+ㅇ 공시변경 1건   
+       - 단일판매·공급계약 계약 금액 50% 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">63</td>
+					<td>케이이엠텍</td>
+					<td style="mso-number-format:'@';text-align:center;">106080</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-04-28
+					</td>
+					<td style="text-align:left;">최대주주 변경을 수반하는 주식 담보제공 계약 체결 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">62</td>
+					<td>삼천당제약</td>
+					<td style="mso-number-format:'@';text-align:center;">000250</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-04-21
+					</td>
+					<td style="text-align:left;">영업실적 등에 대한 전망 또는 예측 공정공시 미이행</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">61</td>
+					<td>모비스</td>
+					<td style="mso-number-format:'@';text-align:center;">250060</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-04-21
+					</td>
+					<td style="text-align:left;">최대주주 변경을 수반하는 주식 양수도 계약 해제ㆍ취소 등 </td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">60</td>
+					<td>하이퍼코퍼레이션</td>
+					<td style="mso-number-format:'@';text-align:center;">065650</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-04-21
+					</td>
+					<td style="text-align:left;">유상증자 발행주식수, 발행금액 100분의 20 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">59</td>
+					<td>다원시스</td>
+					<td style="mso-number-format:'@';text-align:center;">068240</td>
+					<td style='mso-number-format:'@';text-align:right;'>13.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-04-21
+					</td>
+					<td style="text-align:left;">- 소송 등의 제기·신청(경영권 분쟁 소송)(주주명부 열람 및 등사 가처분신청서) 지연공시 
+- 소송 등의 판결·결정(일정금액 이상의 청구) 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">58</td>
+					<td>캐리</td>
+					<td style="mso-number-format:'@';text-align:center;">313760</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-04-16
+					</td>
+					<td style="text-align:left;">유상증자 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">57</td>
+					<td>센서뷰</td>
+					<td style="mso-number-format:'@';text-align:center;">321370</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-04-15
+					</td>
+					<td style="text-align:left;">전환사채권 발행결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">56</td>
+					<td>코퍼스코리아</td>
+					<td style="mso-number-format:'@';text-align:center;">322780</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-03-26
+					</td>
+					<td style="text-align:left;">- 최대주주 변경을 수반하는 주식양수도 계약 해제·취소 등 
+- 유상증자결정(제3자배정) 철회 
+- 전환사채권발행결정(제5회차) 철회 
+- 전환사채권발행결정(제6회차) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">55</td>
+					<td>에코글로우</td>
+					<td style="mso-number-format:'@';text-align:center;">159910</td>
+					<td style='mso-number-format:'@';text-align:right;'>2.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-03-18
+					</td>
+					<td style="text-align:left;">영업양수 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">54</td>
+					<td>KD</td>
+					<td style="mso-number-format:'@';text-align:center;">044180</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-03-18
+					</td>
+					<td style="text-align:left;">소송 등의 제기·신청 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">53</td>
+					<td>알엔투테크놀로지</td>
+					<td style="mso-number-format:'@';text-align:center;">148250</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>2,800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-03-16
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 1건 
+     - 유상증자 결정 철회 
+
+ㅇ 공시변경 1건 
+     - 타법인 주식 및 출자증권 양수금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">52</td>
+					<td>피플바이오</td>
+					<td style="mso-number-format:'@';text-align:center;">304840</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-03-12
+					</td>
+					<td style="text-align:left;">   - 유상증자결정(제3자배정) 철회 
+   - 경영권 변경 등에 관한 계약 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">51</td>
+					<td>다원시스</td>
+					<td style="mso-number-format:'@';text-align:center;">068240</td>
+					<td style='mso-number-format:'@';text-align:right;'>10.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>2,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-03-05
+					</td>
+					<td style="text-align:left;">ㅇ 공시변경 1건 
+      - 단일판매·공급계약 계약 금액 50% 이상 변경 
+
+ㅇ 공시불이행 2건 
+      - 최대주주 변경을 수반하는 주식 담보제공 계약 체결 지연공시 
+      - [정정]최대주주 변경을 수반하는 주식 담보제공 계약 체결 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">50</td>
+					<td>유니슨</td>
+					<td style="mso-number-format:'@';text-align:center;">018000</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-02-25
+					</td>
+					<td style="text-align:left;">최대주주 변경 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">49</td>
+					<td>삼영이엔씨</td>
+					<td style="mso-number-format:'@';text-align:center;">065570</td>
+					<td style='mso-number-format:'@';text-align:right;'>12.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>5,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-02-09
+					</td>
+					<td style="text-align:left;">- 회생절차 개시신청 취하
+- 기타 경영사항(자율공시)(재산보전처분 및 포괄적 금지명령 취하)
+- 기타 경영사항(자율공시)(M&A 조건부 투자계약 체결 해제)
+- 회생절차 개시신청(재항고) 취하</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">48</td>
+					<td>인크레더블버즈</td>
+					<td style="mso-number-format:'@';text-align:center;">064090</td>
+					<td style='mso-number-format:'@';text-align:right;'>9.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-02-09
+					</td>
+					<td style="text-align:left;">ㅇ 공시변경 1건 
+     - 유상증자 발행주식수 100분의 20 이상 변경 
+
+ㅇ 공시번복 2건 
+     - 유상증자 결정 철회 
+     - 타법인 주식 및 출자증권 취득 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">47</td>
+					<td>윙입푸드</td>
+					<td style="mso-number-format:'@';text-align:center;">900340</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-02-09
+					</td>
+					<td style="text-align:left;">해외증권거래소등에 신고한 주요공시사항의 국내신고 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">46</td>
+					<td>유틸렉스</td>
+					<td style="mso-number-format:'@';text-align:center;">263050</td>
+					<td style='mso-number-format:'@';text-align:right;'>15.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-02-09
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 1건 
+     - 최대주주 변경을 수반하는 주식양수도 계약 해제ㆍ취소 등 
+
+ㅇ 공시불이행 3건 
+     -[정정] 최대주주 변경을 수반하는 주식양수도 계약 체결 지연공시 
+     - 단일판매ㆍ공급계약체결 지연공시 
+     - 단일판매ㆍ공급계약체결 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">45</td>
+					<td>한울앤제주</td>
+					<td style="mso-number-format:'@';text-align:center;">276730</td>
+					<td style='mso-number-format:'@';text-align:right;'>8.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-02-05
+					</td>
+					<td style="text-align:left;">유형자산 양수 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">44</td>
+					<td>버킷스튜디오</td>
+					<td style="mso-number-format:'@';text-align:center;">066410</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-01-27
+					</td>
+					<td style="text-align:left;">-투자판단 관련 주요경영사항 정정 지연공시 
+-최대주주 변경을 수반하는 주식양수도 계약 
+   체결 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">43</td>
+					<td>KD</td>
+					<td style="mso-number-format:'@';text-align:center;">044180</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-01-23
+					</td>
+					<td style="text-align:left;">유상증자 결정(주주우선공모증자) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">42</td>
+					<td>제일엠앤에스</td>
+					<td style="mso-number-format:'@';text-align:center;">412540</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-01-23
+					</td>
+					<td style="text-align:left;">자기 전환사채 만기 전 취득결정 취득금액의 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">41</td>
+					<td>롤링스톤</td>
+					<td style="mso-number-format:'@';text-align:center;">214610</td>
+					<td style='mso-number-format:'@';text-align:right;'>4.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-01-21
+					</td>
+					<td style="text-align:left;">유형자산 양수결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">40</td>
+					<td>크레오에스지</td>
+					<td style="mso-number-format:'@';text-align:center;">040350</td>
+					<td style='mso-number-format:'@';text-align:right;'>6.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-01-20
+					</td>
+					<td style="text-align:left;">유상증자결정(제3자배정) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">39</td>
+					<td>아이톡시</td>
+					<td style="mso-number-format:'@';text-align:center;">052770</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복</td>
+					<td style="text-align:center;">
+						
+						2026-01-20
+					</td>
+					<td style="text-align:left;">ㅇ 공시불이행 1건 
+     -전환사채권 발행결정(제18회차) 철회 지연공시 
+
+ㅇ 공시번복 1건 
+     -전환사채권 발행결정(제18회차) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">38</td>
+					<td>한울반도체</td>
+					<td style="mso-number-format:'@';text-align:center;">320000</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-01-19
+					</td>
+					<td style="text-align:left;">-전환사채권발행결정(제3회차) 정정 지연공시 
+-전환사채권발행결정(제4회차) 정정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">37</td>
+					<td>캐리</td>
+					<td style="mso-number-format:'@';text-align:center;">313760</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-01-16
+					</td>
+					<td style="text-align:left;">파산신청 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">36</td>
+					<td>이렘</td>
+					<td style="mso-number-format:'@';text-align:center;">009730</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-01-09
+					</td>
+					<td style="text-align:left;">유상증자 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">35</td>
+					<td>큐리옥스바이오시스템즈</td>
+					<td style="mso-number-format:'@';text-align:center;">445680</td>
+					<td style='mso-number-format:'@';text-align:right;'>1.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2026-01-05
+					</td>
+					<td style="text-align:left;">파생상품거래손실발생 지연 공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">34</td>
+					<td>소룩스</td>
+					<td style="mso-number-format:'@';text-align:center;">290690</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2026-01-02
+					</td>
+					<td style="text-align:left;">ㅇ 공시번복 1건 
+    - 유형자산 양수결정 철회 
+
+ㅇ 공시변경 1건 
+    - 전환사채권 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">33</td>
+					<td>피엔티엠에스</td>
+					<td style="mso-number-format:'@';text-align:center;">257370</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-12-30
+					</td>
+					<td style="text-align:left;">회사합병 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">32</td>
+					<td>엑시온그룹</td>
+					<td style="mso-number-format:'@';text-align:center;">069920</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-12-23
+					</td>
+					<td style="text-align:left;">유상증자 납입기일 6개월 이상 변경 </td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">31</td>
+					<td>씨씨에스</td>
+					<td style="mso-number-format:'@';text-align:center;">066790</td>
+					<td style='mso-number-format:'@';text-align:right;'>12.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>5,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-12-22
+					</td>
+					<td style="text-align:left;">- 경영권 변경등에 관한 계약 체결 지연공시 ('24.2) 
+- 경영권 변경등에 관한 계약 해지 지연공시 ('24.2) 
+- 경영권 변경등에 관한 계약 체결 지연공시 ('24.8) 
+- 경영권 변경등에 관한 계약 해지 지연공시 ('24.8)</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">30</td>
+					<td>인피니트헬스케어</td>
+					<td style="mso-number-format:'@';text-align:center;">071200</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>3,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-12-09
+					</td>
+					<td style="text-align:left;">소송 등의 제기ㆍ신청(경영권 분쟁 소송) 정정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">29</td>
+					<td>에스엘에스바이오</td>
+					<td style="mso-number-format:'@';text-align:center;">246250</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-12-08
+					</td>
+					<td style="text-align:left;">유형자산 양수결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">28</td>
+					<td>오에스피</td>
+					<td style="mso-number-format:'@';text-align:center;">368970</td>
+					<td style='mso-number-format:'@';text-align:right;'>1.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-11-25
+					</td>
+					<td style="text-align:left;">자기주식 취득 신고주식수 미만 매매거래주문</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">27</td>
+					<td>드래곤플라이</td>
+					<td style="mso-number-format:'@';text-align:center;">030350</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-11-05
+					</td>
+					<td style="text-align:left;">전환사채권발행결정(제19회차) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">26</td>
+					<td>에코볼트</td>
+					<td style="mso-number-format:'@';text-align:center;">097780</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-11-05
+					</td>
+					<td style="text-align:left;">유형자산 취득결정(자율공시) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">25</td>
+					<td>동원개발</td>
+					<td style="mso-number-format:'@';text-align:center;">013120</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>2,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행,공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-11-04
+					</td>
+					<td style="text-align:left;">ㅇ 공시불이행 1건 
+   - 단일판매ㆍ공급계약 해지 지연공시 
+
+ㅇ 공시번복 1건 
+   - 단일판매ㆍ공급계약 해지</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">24</td>
+					<td>셀루메드</td>
+					<td style="mso-number-format:'@';text-align:center;">049180</td>
+					<td style='mso-number-format:'@';text-align:right;'>4.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-10-31
+					</td>
+					<td style="text-align:left;"> - 유상증자결정(제3자배정-소액공모) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">23</td>
+					<td>티에스넥스젠</td>
+					<td style="mso-number-format:'@';text-align:center;">043220</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-10-30
+					</td>
+					<td style="text-align:left;">회사분할 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">22</td>
+					<td>자이글</td>
+					<td style="mso-number-format:'@';text-align:center;">234920</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-10-30
+					</td>
+					<td style="text-align:left;">단일판매·공급계약 계약금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">21</td>
+					<td>아이에이</td>
+					<td style="mso-number-format:'@';text-align:center;">038880</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-10-13
+					</td>
+					<td style="text-align:left;">금전대여 결정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">20</td>
+					<td>에코플라스틱</td>
+					<td style="mso-number-format:'@';text-align:center;">038110</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>400</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-09-25
+					</td>
+					<td style="text-align:left;">소송등의 판결·결정 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">19</td>
+					<td>KS인더스트리</td>
+					<td style="mso-number-format:'@';text-align:center;">101000</td>
+					<td style='mso-number-format:'@';text-align:right;'>14.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>5,600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복,공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-09-22
+					</td>
+					<td style="text-align:left;">-유상증자 결정 철회 
+-유상증자 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">18</td>
+					<td>하나마이크론</td>
+					<td style="mso-number-format:'@';text-align:center;">067310</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-09-17
+					</td>
+					<td style="text-align:left;">회사분할 결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">17</td>
+					<td>캔버스엔</td>
+					<td style="mso-number-format:'@';text-align:center;">210120</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-09-09
+					</td>
+					<td style="text-align:left;">전환사채권 발행결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">16</td>
+					<td>휴먼테크놀로지</td>
+					<td style="mso-number-format:'@';text-align:center;">175140</td>
+					<td style='mso-number-format:'@';text-align:right;'>2.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-08-22
+					</td>
+					<td style="text-align:left;">단일판매ㆍ공급계약금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">15</td>
+					<td>크레오에스지</td>
+					<td style="mso-number-format:'@';text-align:center;">040350</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-08-21
+					</td>
+					<td style="text-align:left;">[정정]유상증자결정(제3자배정) 거짓으로 또는 잘못 공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">14</td>
+					<td>드래곤플라이</td>
+					<td style="mso-number-format:'@';text-align:center;">030350</td>
+					<td style='mso-number-format:'@';text-align:right;'>5.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-21
+					</td>
+					<td style="text-align:left;">유상증자 결정(제3자배정) 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">13</td>
+					<td>아미코젠</td>
+					<td style="mso-number-format:'@';text-align:center;">092040</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-08-21
+					</td>
+					<td style="text-align:left;">신규 시설투자 등 투자금액 50% 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">12</td>
+					<td>더테크놀로지</td>
+					<td style="mso-number-format:'@';text-align:center;">043090</td>
+					<td style='mso-number-format:'@';text-align:right;'>13.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-21
+					</td>
+					<td style="text-align:left;">- 조건부 투자계약 해지 1건 
+- 신주인수권부사채권 발행 결정 철회 1건</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">11</td>
+					<td>시스웍</td>
+					<td style="mso-number-format:'@';text-align:center;">269620</td>
+					<td style='mso-number-format:'@';text-align:right;'>3.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-20
+					</td>
+					<td style="text-align:left;">투자판단 관련 주요경영사항(조건부 투자계약 해제의 건)</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">10</td>
+					<td>올리패스</td>
+					<td style="mso-number-format:'@';text-align:center;">244460</td>
+					<td style='mso-number-format:'@';text-align:right;'>11.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>4,600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-19
+					</td>
+					<td style="text-align:left;">유상증자결정(제3자배정) 철회 2건</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">9</td>
+					<td>카이노스메드</td>
+					<td style="mso-number-format:'@';text-align:center;">284620</td>
+					<td style='mso-number-format:'@';text-align:right;'>7.5</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-08-19
+					</td>
+					<td style="text-align:left;">유상증자 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">8</td>
+					<td>세경하이테크</td>
+					<td style="mso-number-format:'@';text-align:center;">148150</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>800</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-18
+					</td>
+					<td style="text-align:left;">타법인 주식 및 출자증권 취득결정 철회</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">7</td>
+					<td>나노실리칸첨단소재</td>
+					<td style="mso-number-format:'@';text-align:center;">286750</td>
+					<td style='mso-number-format:'@';text-align:right;'>6.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-08-06
+					</td>
+					<td style="text-align:left;">유상증자 납입기일 6개월 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">6</td>
+					<td>진시스템</td>
+					<td style="mso-number-format:'@';text-align:center;">363250</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,600</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시번복</td>
+					<td style="text-align:center;">
+						
+						2025-08-06
+					</td>
+					<td style="text-align:left;">단일판매ㆍ공급계약 해지</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">5</td>
+					<td>신라젠</td>
+					<td style="mso-number-format:'@';text-align:center;">215600</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,000</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시변경</td>
+					<td style="text-align:center;">
+						
+						2025-08-06
+					</td>
+					<td style="text-align:left;">타법인 주식 및 출자증권 양도금액 100분의 50 이상 변경</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">4</td>
+					<td>한국유니온제약</td>
+					<td style="mso-number-format:'@';text-align:center;">080720</td>
+					<td style='mso-number-format:'@';text-align:right;'>21.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>5,400</td>
+					<td style="text-align:center;">공시책임자</td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-08-06
+					</td>
+					<td style="text-align:left;">-최대주주 변경을 수반하는 주식 담보제공 계약 체결 미공시 
+-최대주주 변경을 수반하는 주식양수도 계약 체결 미공시 
+-최대주주 변경 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">3</td>
+					<td>세중</td>
+					<td style="mso-number-format:'@';text-align:center;">039310</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>1,200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-07-25
+					</td>
+					<td style="text-align:left;">매출액 또는 손익구조 30%(대규모법인은 15%)이상 변동 미공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">2</td>
+					<td>나노실리칸첨단소재</td>
+					<td style="mso-number-format:'@';text-align:center;">286750</td>
+					<td style='mso-number-format:'@';text-align:right;'>6.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>0</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-07-09
+					</td>
+					<td style="text-align:left;">최대주주 변경 지연공시</td>
+				</tr>
+			
+				
+				
+				
+				
+				
+				
+				<tr class="">
+					<td style="text-align:center;">1</td>
+					<td>씨엔플러스</td>
+					<td style="mso-number-format:'@';text-align:center;">115530</td>
+					<td style='mso-number-format:'@';text-align:right;'>0.0</td>
+					<td style='mso-number-format:'@';text-align:right;'>200</td>
+					<td style="text-align:center;"></td>
+					<td style="text-align:center;">공시불이행</td>
+					<td style="text-align:center;">
+						
+						2025-07-08
+					</td>
+					<td style="text-align:left;">소송등의제기ㆍ신청(일정금액 이상의 청구) 지연공시</td>
+				</tr>
+			
+		
+		
+	
+</table>
+</body>
+</html>

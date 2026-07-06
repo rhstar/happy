@@ -10,7 +10,7 @@ dart = OpenDartReader(os.getenv("DART_API_KEY"))
 
 def get_current_executives(corp_code):
     #2025 2024 2023 2022 2021 ->5년이내 재직 임원
-    for year in range(2025, 2021, -1):
+    for year in range(2025, 2020, -1):
         try:
             df = dart.report(corp_code, '임원', year)
             if df is not None and len(df) > 0:
@@ -21,7 +21,7 @@ def get_current_executives(corp_code):
 
 
 if __name__ == '__main__':
-    kosdaq = pd.read_html("data/kosdaq_listed.xls", encoding='euc-kr')[0]
+    kosdaq = pd.read_html("data/코스닥_상장.xls", encoding='euc-kr')[0]
     kosdaq['종목코드'] = kosdaq['종목코드'].astype(str).str.zfill(6)
     kosdaq = kosdaq[~kosdaq['회사명'].str.contains('스팩', na=False)]
     kosdaq = kosdaq[kosdaq['종목코드'].str.match(r'^\d{6}$')]

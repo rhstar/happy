@@ -1,36 +1,55 @@
 import pandas as pd
 
-# 조기경보 위험 랭킹 (횡령 제외 모델)
-ranking = pd.read_csv("data/risk_ranking_no_embezzle.csv", dtype={'종목코드': str})
-ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
 
-# 임원 매칭 결과
-matches = pd.read_csv("data/executive_matches_all.csv", dtype={'종목코드': str})
-matches['종목코드'] = matches['종목코드'].str.zfill(6)
+def build_flagged(matches_file, groups, label):
+    ranking = pd.read_csv("data/risk_ranking_no_embezzle.csv", dtype={'종목코드': str})
+    ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
 
-# 기업별로 위험인물 정보 집계 (한 회사에 여러 명일 수 있으니)
-match_summary = matches.groupby('종목코드').agg(
-    위험인물수=('인물', 'count'),
-    최다경력수=('과거위험기업수', 'max'),
-    위험인물목록=('인물', lambda x: ', '.join(x)),
-    출신기업목록=('과거위험기업', lambda x: ' / '.join(x)),
-).reset_index()
+    matches = pd.read_csv(matches_file, dtype={'종목코드': str})
+    matches['종목코드'] = matches['종목코드'].str.zfill(6)
+    matches = matches.sort_values('과거위험기업수', ascending=False)
+    # 생년월 공백 정리 후 중복 제거 (표기 차이로 인한 중복 방지)
+    matches['생년월'] = matches['생년월'].astype(str).str.strip()
+    matches = matches.drop_duplicates(subset=['종목코드', '인물', '생년월'], keep='first')
 
-# 위험 랭킹에 임원 매칭 정보 붙이기 (left join)
-combined = ranking.merge(match_summary, on='종목코드', how='left')
+    def best_group(origin_str):
+        companies = origin_str.split(', ')
+        nums = [groups.get(c) for c in companies if groups.get(c) is not None]
+        return min(nums) if nums else None
 
-# 위험인물이 있는 회사만 필터 (매칭된 곳)
-combined['위험인물수'] = combined['위험인물수'].fillna(0).astype(int)
-flagged = combined[combined['위험인물수'] > 0].copy()
+    matches['소속그룹'] = matches['과거위험기업'].apply(best_group)
 
-# 정렬: 위험점수 높은 순
-flagged = flagged.sort_values('risk_score', ascending=False)
-flagged['위험도%'] = (flagged['risk_score'] * 100).round(1)
+    summary = matches.groupby('종목코드').agg(
+        위험인물수=('인물', 'count'),
+        최다경력수=('과거위험기업수', 'max'),
+        소속그룹=('소속그룹', 'min'),
+        위험인물목록=('인물', lambda x: ', '.join(x)),
+        출신기업목록=('과거위험기업', lambda x: ' / '.join(x)),
+    ).reset_index()
 
-# 결과 저장
-out_cols = ['회사명', '종목코드', '위험도%', '위험인물수', '최다경력수', '위험인물목록', '출신기업목록']
-flagged[out_cols].to_csv("data/final_flagged.csv", index=False, encoding='utf-8-sig')
+    combined = ranking.merge(summary, on='종목코드', how='left')
+    combined['위험인물수'] = combined['위험인물수'].fillna(0).astype(int)
 
-print(f"위험점수 + 위험인물 교차 기업: {len(flagged)}개\n")
-print("=== 최종 경고 리스트 (위험 지표 + 부실기업 출신 임원) ===\n")
-print(flagged[['회사명', '위험도%', '위험인물수', '최다경력수']].head(20).to_string(index=False))
+    flagged = combined[combined['위험인물수'] > 0].copy()
+    flagged['위험도%'] = (flagged['risk_score'] * 100).round(1)
+    # 저장 직전에 완전 중복 행 제거
+    flagged = flagged.drop_duplicates()
+    flagged = flagged.sort_values('risk_score', ascending=False)
+
+    out_cols = ['회사명', '종목코드', '위험도%', '소속그룹', '위험인물수', '최다경력수',
+                '위험인물목록', '출신기업목록']
+    flagged[out_cols].to_csv(f"data/final_flagged_{label}.csv", index=False, encoding='utf-8-sig')
+    return flagged
+
+
+if __name__ == '__main__':
+    groups = pd.read_csv("data/company_groups.csv")
+    groups_map = dict(zip(groups['위험기업'], groups['그룹']))
+
+    pd.set_option('display.max_rows', None)
+    f2 = build_flagged("data/executive_matches_2y.csv", groups_map, "2y")
+    f5 = build_flagged("data/executive_matches_5y.csv", groups_map, "5y")
+
+    print(f"[2년] {len(f2)}개 / [5년] {len(f5)}개\n")
+    print("[5년 전체] 소속그룹 = 출신 위험기업의 네트워크 그룹번호")
+    print(f5[['회사명', '위험도%', '소속그룹', '위험인물수', '최다경력수']].to_string(index=False))
