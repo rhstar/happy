@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 전체 코스닥 상장사
-kosdaq = pd.read_html("data/코스닥_상장.xls", encoding='euc-kr')[0]
+kosdaq = pd.read_html("input_files/코스닥_상장.xls", encoding='euc-kr')[0]
 kosdaq['종목코드'] = kosdaq['종목코드'].astype(str).str.zfill(6)
 kosdaq = kosdaq[~kosdaq['회사명'].str.contains('스팩', na=False)]
 kosdaq = kosdaq[kosdaq['종목코드'].str.match(r'^\d{6}$')]

@@ -9,7 +9,7 @@ dart = OpenDartReader(os.getenv("DART_API_KEY"))
 
 # KIND 파일을 미리 한 번만 로드 (종목코드 집합으로)
 def load_kind_codes(filename):
-    df = pd.read_html(f"data/{filename}", encoding='euc-kr')[0]
+    df = pd.read_html(f"input_files/{filename}", encoding='euc-kr')[0]
     codes = df['종목코드'].astype(str).str.zfill(6)
     return set(codes)
 

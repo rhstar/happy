@@ -26,7 +26,7 @@ RISK_KEYWORDS = [
 
 def build_risky():
     """위험 그룹: 상장폐지 기업 중 위험 사유 + 2018년 이후"""
-    df = pd.read_html("data/상장폐지현황.xls", encoding='euc-kr')[0]
+    df = pd.read_html("input_files/상장폐지현황.xls", encoding='euc-kr')[0]
     df = df[~df['회사명'].str.contains('스팩', na=False)]
     df['is_risky'] = df['폐지사유'].apply(
         lambda r: any(kw in str(r) for kw in RISK_KEYWORDS)
@@ -44,7 +44,7 @@ def build_risky():
 
 def build_control(n_sample, exclude_codes):
     """대조군: 현재 코스닥 상장사에서 무작위 추출"""
-    df = pd.read_html("data/코스닥_상장.xls", encoding='euc-kr')[0]
+    df = pd.read_html("input_files/코스닥_상장.xls", encoding='euc-kr')[0]
     df['종목코드'] = df['종목코드'].astype(str).str.zfill(6)
     df = df[~df['회사명'].str.contains('스팩', na=False)]
     df = df[df['종목코드'].str.match(r'^\d{6}$')]
