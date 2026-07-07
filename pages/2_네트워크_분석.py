@@ -1,17 +1,5 @@
 """
-network_app.py — 위험기업 경영진 네트워크 인터랙티브 탐색 (로컬 전용)
-
-네 가지 보기:
-  1. 위험기업 간 네트워크 (공유 경영진으로 연결)
-  2. 위험기업 → 현재 상장사 확산 네트워크
-  3. 핵심 인물 분석 (2+ 위험기업 경력자 + 1개 거친 현직자)
-  4. 현재기업별 위험인물 (현재 상장사에 위험인물이 몇 명)
-
-필터: 사유발생연도, 재직시점(years_before_event), 그룹 선택
-회사 상태: 예측 위험도%/백분위, 없으면 이유(위험군/대조군/스팩/기타)
-출신 위험기업엔 실질심사 사유를 함께 표시
-실행: streamlit run network_analysis/network_app.py  (루트에서)
-※ 실명 표시, 로컬 전용
+2_네트워크_분석.py — 위험기업 경영진 네트워크 탐색 (통합앱 페이지)
 """
 import pandas as pd
 import networkx as nx
@@ -20,6 +8,7 @@ import streamlit as st
 import os
 import tempfile
 
+# pages 폴더 안에서 실행 → 두 단계 위가 루트
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "network_analysis/data")
 
@@ -46,28 +35,42 @@ def load():
 
     persons = pd.read_csv(os.path.join(DATA, "key_persons.csv"))
 
-    ranking = pd.read_csv(os.path.join(ROOT, "data/risk_ranking_no_embezzle.csv"),
-                          dtype={'종목코드': str})
-    ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
-    ranking['순위'] = ranking['risk_score'].rank(ascending=False, method='min').astype(int)
-    ranking['백분위'] = (ranking['순위'] / len(ranking) * 100).round(1)
+    # 재직시점별 사전 계산 파일 (있으면 핵심 인물 분석의 재직 시점 필터에 사용)
+    by_ybe_path = os.path.join(DATA, "key_persons_by_ybe.csv")
+    persons_by_ybe = pd.read_csv(by_ybe_path) if os.path.exists(by_ybe_path) else None
+
+    # 교차검증 기반 통합 랭킹 우선 (대조군 포함 전체). 없으면 예측대상만.
+    all_path = os.path.join(ROOT, "data/risk_ranking_all.csv")
+    if os.path.exists(all_path):
+        ranking = pd.read_csv(all_path, dtype={'종목코드': str})
+        ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
+        # 위험 확정(실질심사) 기업은 예측 점수 대상이 아니므로 제외
+        if '위험발생' in ranking:
+            ranking = ranking[~ranking['위험발생'].astype(bool)]
+        if '백분위' not in ranking:
+            ranking['순위'] = ranking['risk_score'].rank(ascending=False, method='min').astype(int)
+            ranking['백분위'] = (ranking['순위'] / len(ranking) * 100).round(1)
+    else:
+        ranking = pd.read_csv(os.path.join(ROOT, "data/risk_ranking_no_embezzle.csv"),
+                              dtype={'종목코드': str})
+        ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
+        ranking['순위'] = ranking['risk_score'].rank(ascending=False, method='min').astype(int)
+        ranking['백분위'] = (ranking['순위'] / len(ranking) * 100).round(1)
 
     dataset = pd.read_csv(os.path.join(ROOT, "data/dataset.csv"), dtype={'종목코드': str})
     dataset['종목코드'] = dataset['종목코드'].str.zfill(6)
 
-    return execs, group_map, matches, persons, ranking, dataset, reason_map
+    return execs, group_map, matches, persons, persons_by_ybe, ranking, dataset, reason_map
 
 
-execs, group_map, matches, persons, ranking, dataset, reason_map = load()
+execs, group_map, matches, persons, persons_by_ybe, ranking, dataset, reason_map = load()
 
-# ===== 회사 상태 판별 준비 =====
 risk_by_code = ranking.set_index('종목코드')[['risk_score', '백분위']].to_dict('index')
 train_risky = set(dataset[dataset['label'] == 1]['종목코드'])
 train_control = set(dataset[dataset['label'] == 0]['종목코드'])
 
 
 def status_label(name, code):
-    """회사의 위험도 또는 상태를 짧게 반환."""
     code = str(code).zfill(6)
     info = risk_by_code.get(code)
     if info:
@@ -81,12 +84,10 @@ def status_label(name, code):
     return "예측대상 외"
 
 
-st.set_page_config(page_title="위험기업 네트워크", page_icon="🕸️", layout="wide")
 st.title("🕸️ 위험기업 경영진 네트워크 탐색")
-st.caption("실질심사 위험군(2013~) · 실질 경영진 기준(사외이사·감사 제외) · 로컬 전용")
+st.caption("실질심사 위험군(2013~) · 실질 경영진 기준(사외이사·감사 제외)")
 
-# ===== 사이드바 필터 =====
-st.sidebar.header("필터")
+st.sidebar.header("네트워크 필터")
 
 net_type = st.sidebar.radio(
     "보기",
@@ -94,9 +95,10 @@ net_type = st.sidebar.radio(
      "핵심 인물 분석", "현재기업별 위험인물"]
 )
 
-yr_min, yr_max = int(execs['사유발생연도'].min()), int(execs['사유발생연도'].max())
-year_range = st.sidebar.slider("사유발생 연도", yr_min, yr_max, (yr_min, yr_max))
+# 사유발생연도 필터는 사용하지 않고 전체 범위(2013~현재)로 고정한다.
+year_range = (int(execs['사유발생연도'].min()), int(execs['사유발생연도'].max()))
 
+# 재직 시점 필터(사유발생 N년 이내)는 유지 — 핵심 인물 분석 포함 모든 뷰에 적용.
 max_ybe = int(execs['years_before_event'].max())
 ybe = st.sidebar.slider("재직 시점 (사유발생 N년 이내)", 0, max_ybe, max_ybe,
                         help="0이면 사유발생 시점 재직자만. 클수록 과거 재직자까지 포함.")
@@ -106,36 +108,46 @@ group_options = ["전체"] + [f"그룹 {g}" for g in all_groups]
 picked_group = st.sidebar.selectbox("그룹 선택", group_options)
 
 
-# ===== 보기 3: 핵심 인물 분석 =====
 if net_type == "핵심 인물 분석":
     st.subheader("핵심 인물 — 여러 위험기업을 거친 경영진 + 현직 위험인물")
 
-    min_companies = st.slider("최소 위험기업 수", 1, int(persons['위험기업수'].max()), 1)
+    # 재직 시점(ybe)별로 미리 계산해 둔 파일에서 해당 행만 골라 즉시 표시한다.
+    # (라이브 재계산은 느리므로 analyze_persons.py가 사전 계산해 저장한다)
+    if persons_by_ybe is not None:
+        sub = persons_by_ybe[persons_by_ybe['재직시점'] == ybe]
+        note = f"재직 시점 필터(사유발생 {ybe}년 이내) 적용"
+    else:
+        sub = persons
+        note = ("⚠️ 재직시점별 사전계산 파일 없음 — 전체 기간으로 표시. "
+                "`python network_analysis/analyze_persons.py` 실행 시 시점 필터 반영")
+
+    max_c = int(sub['위험기업수'].max()) if len(sub) else 1
+    min_companies = st.slider("최소 위험기업 수", 1, max(max_c, 1), 1)
     only_current = st.checkbox("현재 상장사 재직자만")
 
-    p = persons[persons['위험기업수'] >= min_companies].copy()
+    p = sub[sub['위험기업수'] >= min_companies].copy()
     if only_current:
-        p = p[p['현재재직'].notna() & (p['현재재직'] != '')]
+        p = p[p['현재재직'].notna() & (p['현재재직'].astype(str) != '')]
+    p = p.sort_values('위험기업수', ascending=False)
 
-    st.caption(f"{len(p)}명 · 궤적은 '기업(사유발생연도, 실질심사사유)' 순. "
+    st.caption(f"{len(p)}명 · {note} · 궤적은 '기업(사유발생연도, 실질심사사유)' 순. "
                "2개 이상 거친 연쇄 이동자 + 1개 거친 현직자를 포함. "
                "그룹 계열사 동시 재직(정상 경영)이 섞일 수 있으니 궤적을 함께 확인하세요.")
 
     for _, r in p.iterrows():
         st.markdown(f"**{r['인물']}** ({r['생년월']}) — {r['위험기업수']}개 위험기업")
         st.markdown(f"　{r['거친기업(연도순)']}")
-        if pd.notna(r['현재재직']) and r['현재재직']:
+        if pd.notna(r['현재재직']) and str(r['현재재직']):
             companies = [c.strip() for c in str(r['현재재직']).split(';')]
             st.markdown("🔵 **현재 재직:**")
             for c in companies:
                 st.markdown(f"　· {c}")
         st.divider()
 
-    st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음. 로컬 분석용.")
+    st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음.")
     st.stop()
 
 
-# ===== 보기 4: 현재기업별 위험인물 =====
 if net_type == "현재기업별 위험인물":
     st.subheader("현재 상장사별 위험인물 집계")
 
@@ -163,8 +175,7 @@ if net_type == "현재기업별 위험인물":
 
     for _, r in agg.iterrows():
         status = status_label(r['현재기업'], r['종목코드'])
-        st.markdown(f"**{r['현재기업']}** ({r['종목코드']}) — "
-                    f"위험인물 {r['위험인물수']}명　`{status}`")
+        st.markdown(f"**{r['현재기업']}** ({r['종목코드']}) — 위험인물 {r['위험인물수']}명　`{status}`")
         st.markdown(f"　👤 {r['위험인물']}")
         st.markdown("　🏢 **출신 위험기업:**")
         for co in r['출신위험기업']:
@@ -172,11 +183,10 @@ if net_type == "현재기업별 위험인물":
             st.markdown(f"　　· {co} ({reason})")
         st.divider()
 
-    st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음. 로컬 분석용.")
+    st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음.")
     st.stop()
 
 
-# ===== 보기 1·2: 네트워크 그래프 =====
 f = execs[
     (execs['사유발생연도'] >= year_range[0]) &
     (execs['사유발생연도'] <= year_range[1]) &
@@ -218,7 +228,7 @@ if net_type == "위험기업 간 연결":
 
     st.subheader(f"위험기업 간 네트워크 — 노드 {G.number_of_nodes()}, 엣지 {G.number_of_edges()}")
 
-else:  # 확산
+else:
     m = matches.copy()
     m = m[(m['사유발생연도'] >= year_range[0]) &
           (m['사유발생연도'] <= year_range[1]) &
@@ -248,14 +258,13 @@ else:  # 확산
 
     st.subheader(f"확산 네트워크 — 매칭 {len(m)}건 (빨강=위험기업, 파랑=현재 상장사)")
 
-# ===== 렌더링 =====
 if len(net.nodes) == 0:
     st.warning("조건에 맞는 네트워크가 없습니다. 필터를 완화해 보세요.")
 else:
-    tmp = os.path.join(tempfile.gettempdir(), "net.html")
+    tmp = os.path.join(tempfile.gettempdir(), "net_page.html")
     net.save_graph(tmp)
     with open(tmp, 'r', encoding='utf-8') as fp:
         html = fp.read()
     st.components.v1.html(html, height=720)
 
-st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음. 로컬 분석용.")
+st.caption("※ 공개 공시 기반 의심 정황이며 위법을 단정하지 않음.")
