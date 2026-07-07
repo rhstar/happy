@@ -34,6 +34,7 @@ REQUIRED = [
     "network_analysis/data/network_risky_set.csv",
     "network_analysis/data/network_matches.csv",
     "network_analysis/data/key_persons.csv",
+    "network_analysis/data/key_persons_by_ybe.csv",   # 핵심 인물 분석 재직시점 필터
     # 입력 파일
     "input_files/코스닥_상장.xls",
 ]
