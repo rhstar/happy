@@ -1,0 +1,869 @@
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>매매거래정지종목(EXCEL)</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+</head>
+<body>
+<!-- 게시판 start -->
+<table cellpadding="0" cellspacing="1" class="bbs_tb" border=1>
+	
+	<col width="5%" />
+	<col width="15%" />
+	<col width="11%" />
+	<col width="*%" />
+		<tr>
+			<th bgcolor="#66FF99">번호</th>
+			<th bgcolor="#66FF99">종목명</th>
+			<th bgcolor="#66FF99">종목코드</th>
+			<th bgcolor="#66FF99">사유</th>
+		</tr>
+		
+			
+			
+			
+				<tr>
+					<td style="text-align:center;">83</td>
+					<td>DGI</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						099520
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">82</td>
+					<td>EDGC</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						245620
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">81</td>
+					<td>IBKS제24호스팩</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						469480
+					</td>
+					<td >SPAC 합병(예비심사청구대상)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">80</td>
+					<td>IBKS제25호스팩</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						0099X0
+					</td>
+					<td >SPAC 합병(예비심사청구대상)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">79</td>
+					<td>KD</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						044180
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">78</td>
+					<td>KNN</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						058400
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">77</td>
+					<td>교보15호스팩</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						465320
+					</td>
+					<td >SPAC 합병(예비심사청구대상)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">76</td>
+					<td>다원시스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						068240
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">75</td>
+					<td>대산F&B</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						065150
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">74</td>
+					<td>대진첨단소재</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						393970
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">73</td>
+					<td>더테크놀로지</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						043090
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">72</td>
+					<td>동일기연</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						032960
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">71</td>
+					<td>드래곤플라이</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						030350
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">70</td>
+					<td>디에이치엑스컴퍼니</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						031860
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">69</td>
+					<td>디에이테크놀로지</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						196490
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">68</td>
+					<td>디젠스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						113810
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">67</td>
+					<td>롤링스톤</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						214610
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">66</td>
+					<td>메디콕스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						054180
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">65</td>
+					<td>메이슨캐피탈</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						021880
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">64</td>
+					<td>미래에셋비전스팩7호</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						482680
+					</td>
+					<td >SPAC 합병(예비심사청구대상)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">63</td>
+					<td>버킷스튜디오</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						066410
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">62</td>
+					<td>비덴트</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						121800
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">61</td>
+					<td>비엘팜텍</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						065170
+					</td>
+					<td >투자경고 및 위험</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">60</td>
+					<td>삼영이엔씨</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						065570
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">59</td>
+					<td>성원에너텍</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						340930
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">58</td>
+					<td>세종메디칼</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						258830
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">57</td>
+					<td>셀레스트라</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						352770
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">56</td>
+					<td>셀루메드</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						049180
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">55</td>
+					<td>셀피글로벌</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						068940
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">54</td>
+					<td>소노스퀘어</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						007720
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">53</td>
+					<td>스코넥</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						276040
+					</td>
+					<td >파산신청(발행 ELW 포함)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">52</td>
+					<td>스타코링크</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						060240
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">51</td>
+					<td>시스웍</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						269620
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">50</td>
+					<td>시큐레터</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						418250
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">49</td>
+					<td>씨씨에스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						066790
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">48</td>
+					<td>아스타</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						246720
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">47</td>
+					<td>아이큐어</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						175250
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">46</td>
+					<td>아이톡시</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						052770
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">45</td>
+					<td>아이티켐</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						309710
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">44</td>
+					<td>알에프세미</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						096610
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">43</td>
+					<td>알엔티엑스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						123010
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">42</td>
+					<td>알파AI</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						043100
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">41</td>
+					<td>에스디생명공학</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						217480
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">40</td>
+					<td>에스아이리소스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						065420
+					</td>
+					<td >조회공시 신고시한 위반</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">39</td>
+					<td>에스엘에스바이오</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						246250
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">38</td>
+					<td>엔젠바이오</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						354200
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">37</td>
+					<td>엔지켐생명과학</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						183490
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">36</td>
+					<td>엔케이젠바이오텍코리아</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						182400
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">35</td>
+					<td>예선테크</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						250930
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">34</td>
+					<td>올리패스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						244460
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">33</td>
+					<td>옵티코어</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						380540
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">32</td>
+					<td>유진스팩10호</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						468760
+					</td>
+					<td >SPAC 합병(예비심사청구대상)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">31</td>
+					<td>유틸렉스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						263050
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">30</td>
+					<td>이렘</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						009730
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">29</td>
+					<td>이오플로우</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						294090
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">28</td>
+					<td>이화공영</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						001840
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">27</td>
+					<td>인산가</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						277410
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">26</td>
+					<td>인크레더블버즈</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						064090
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">25</td>
+					<td>자이글</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						234920
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">24</td>
+					<td>제이스코홀딩스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						023440
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">23</td>
+					<td>제일엠앤에스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						412540
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">22</td>
+					<td>지슨</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						446840
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">21</td>
+					<td>카이노스메드</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						284620
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">20</td>
+					<td>캐리</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						313760
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">19</td>
+					<td>캔버스엔</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						210120
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">18</td>
+					<td>케스피온</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						079190
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">17</td>
+					<td>케이이엠텍</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						106080
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">16</td>
+					<td>코다코</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						046070
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">15</td>
+					<td>코맥스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						036690
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">14</td>
+					<td>코스나인</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						082660
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">13</td>
+					<td>큐라티스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						348080
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">12</td>
+					<td>큐에이드</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						377460
+					</td>
+					<td >상장적격성 실질심사 대상(사유발생)</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">11</td>
+					<td>테라사이언스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						073640
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">10</td>
+					<td>토비스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						051360
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">9</td>
+					<td>투비소프트</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						079970
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">8</td>
+					<td>티에스넥스젠</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						043220
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">7</td>
+					<td>파라택시스코리아</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						288330
+					</td>
+					<td >상장폐지 사유발생</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">6</td>
+					<td>플래스크</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						041590
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">5</td>
+					<td>플루토스</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						019570
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">4</td>
+					<td>피씨엘</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						241820
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">3</td>
+					<td>한국유니온제약</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						080720
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">2</td>
+					<td>한탑</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						002680
+					</td>
+					<td >주식의 병합, 분할 등 전자등록 변경, 말소</td>
+				</tr>
+			
+			
+				<tr>
+					<td style="text-align:center;">1</td>
+					<td>현대사료</td>
+					<td style='mso-number-format: "@";text-align:center;'>
+						016790
+					</td>
+					<td >투자자 보호</td>
+				</tr>
+			
+			
+			
+		
+</table>
+
+</body>
+</html>
