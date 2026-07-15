@@ -11,7 +11,7 @@ A_1 → A_2 → A_3(재시도 포함) → B_1(3년) → B_2 → B_3
   (resume 기능이 있어 재실행하면 이어서 수집한다)
 - 전체 출력은 화면과 run_all_log.txt 에 동시에 기록된다.
 
-실행: python RUN_ALL.py   (happy 루트에서)
+실행: python clean_run.py   (happy 루트에서)
 """
 import os
 import sys
