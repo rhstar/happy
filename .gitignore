@@ -3,6 +3,7 @@
 docs_cache/
 data/
 old/
+lib/
 network_analysis/data/
 network_analysis/docs_cache
 data/executive_matches.csv
