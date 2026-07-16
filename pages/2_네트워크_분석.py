@@ -115,8 +115,8 @@ year_range = (int(execs['사유발생연도'].min()), int(execs['사유발생연
 
 # 재직 시점 필터(사유발생 N년 이내)는 유지 — 핵심 인물 분석 포함 모든 뷰에 적용.
 max_ybe = int(execs['years_before_event'].max())
-ybe = st.sidebar.slider("재직 시점 (사유발생 N년 이내)", 0, max_ybe, max_ybe,
-                        help="0이면 사유발생 시점 재직자만. 클수록 과거 재직자까지 포함.")
+ybe = st.sidebar.slider("재직 시점 (사유발생 N년 이내)", 0, max_ybe, min(5, max_ybe),
+                        help="검증 결과 3~5년 정점. 기본 5년, 넓게 보려면 조절.")
 
 all_groups = sorted(set(group_map.values()))
 group_options = ["전체"] + [f"그룹 {g}" for g in all_groups]

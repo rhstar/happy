@@ -5,7 +5,15 @@
 이 파일이 있으면 대조군을 포함한 코스닥 보통주 전체가 위험도를 갖는다.
 (없으면 예측대상만 담은 기존 파일로 자동 대체 — 대조군은 점수 없음으로 표시)
 
-통합 랭킹 생성:  python 4_predict.py
+위험 경영진 표시에는 재직 시점 필터(사유발생 N년 이내, 기본 5년)를 적용한다.
+검증(B_4) 결과 재직 창 3~5년 구간에서 예측력이 정점이고 7년 이상은 하락하므로,
+기본값을 5년으로 두되 사이드바에서 조절할 수 있게 한다.
+
+매매거래정지 여부: input_files/매매거래정지종목.xls 가 있으면,
+조회한 종목이 현재 거래정지 상태인지와 그 사유를 최상단에 표시한다.
+(파일이 없으면 이 표시는 조용히 생략된다)
+
+통합 랭킹 생성:  python B_3_predict.py
 """
 import os
 import pandas as pd
@@ -47,25 +55,41 @@ def load_data():
     kosdaq = kosdaq.drop_duplicates(subset=['회사명', '종목코드'])
     kosdaq['is_spac'] = kosdaq['회사명'].str.contains('스팩', na=False)
 
-    matches = pd.read_csv(os.path.join(ROOT, "network_analysis/data/network_matches.csv"),
+    # 위험 경영진 매칭 원자료 (재직 시점 필터는 화면에서 적용)
+    matches = pd.read_csv(os.path.join(ROOT, "data/network_matches.csv"),
                           dtype={'종목코드': str})
     matches['종목코드'] = matches['종목코드'].str.zfill(6)
 
-    flagged_rows = []
-    for code, grp in matches.groupby('종목코드'):
-        persons = grp[['인물', '출신위험기업']].drop_duplicates()
-        flagged_rows.append({
-            '종목코드': code,
-            '회사명': grp.iloc[0]['현재기업'],
-            '위험인물수': persons['인물'].nunique(),
-            '인물목록': list(zip(persons['인물'], persons['출신위험기업'])),
-        })
-    flagged = pd.DataFrame(flagged_rows)
+    # ===== 매매거래정지 목록 (있으면 표시, 없으면 생략) =====
+    try:
+        halt = pd.read_html(os.path.join(ROOT, "input_files/매매거래정지종목.xls"),
+                            encoding='euc-kr')[0]
+        halt['종목코드'] = halt['종목코드'].astype(str).str.zfill(6)
+        halt_map = dict(zip(halt['종목코드'], halt['사유'].astype(str)))
+    except Exception:
+        halt_map = {}
 
-    return ranking, flagged, dataset, kosdaq, use_unified
+    return ranking, matches, dataset, kosdaq, use_unified, halt_map
 
 
-ranking, flagged, dataset, kosdaq, use_unified = load_data()
+ranking, matches, dataset, kosdaq, use_unified, halt_map = load_data()
+
+#5년이 최적임.
+ybe = 5
+
+m = matches[matches['years_before_event'] <= ybe]
+flagged_rows = []
+for code, grp in m.groupby('종목코드'):
+    persons = grp[['인물', '출신위험기업', 'years_before_event']].drop_duplicates(
+        subset=['인물', '출신위험기업'])
+    flagged_rows.append({
+        '종목코드': code,
+        '회사명': grp.iloc[0]['현재기업'],
+        '위험인물수': persons['인물'].nunique(),
+        '인물목록': list(zip(persons['인물'], persons['출신위험기업'],
+                          persons['years_before_event'])),
+    })
+flagged = pd.DataFrame(flagged_rows)
 
 # 백분위 산정 모집단(위험 미확정 기업) 크기
 pending = ranking[~ranking['위험발생']] if '위험발생' in ranking else ranking
@@ -80,9 +104,10 @@ flagged_codes = set(flagged['종목코드']) if len(flagged) else set()
 
 st.title("📊 코스닥 위험 조회")
 cap = ("코스닥 보통주 대상 (스팩·우선주 제외) · "
-       "위험도: 교차검증 기반 전체 상장사 점수 · 위험경영진: 네트워크(2013~)")
+       "위험도: 교차검증 기반 전체 상장사 점수 · "
+       f"위험경영진: 네트워크(2013~), 재직 {ybe}년 이내")
 if not use_unified:
-    cap += "  ⚠️ 통합 랭킹 미생성 — `python 4_predict.py` 실행 시 대조군까지 점수화"
+    cap += "  ⚠️ 통합 랭킹 미생성 — `python B_3_predict.py` 실행 시 대조군까지 점수화"
 st.caption(cap)
 
 mode = st.radio("조회 방식", ["종목명 검색", "목록에서 선택"], horizontal=True)
@@ -99,13 +124,13 @@ else:
 def show_flagged(code6):
     eh = flagged[flagged['종목코드'] == code6] if len(flagged) else flagged
     if len(eh) == 0:
-        st.success("✅ 부실기업 출신 경영진이 발견되지 않았습니다.")
+        st.success(f"✅ 부실기업 출신 경영진이 발견되지 않았습니다. (재직 {ybe}년 이내 기준)")
         return
     er = eh.iloc[0]
     n = int(er['위험인물수'])
-    st.error(f"⚠️ 부실기업 출신 경영진 **{n}명** 발견")
-    for person, origin in er['인물목록']:
-        st.markdown(f"- **{person}** — {origin} 출신")
+    st.error(f"⚠️ 부실기업 출신 경영진 **{n}명** 발견 (재직 {ybe}년 이내)")
+    for person, origin, y in er['인물목록']:
+        st.markdown(f"- **{person}** — {origin} 출신 · 사유발생 {int(y)}년 전 재직")
 
 
 def show_already_risk(code6):
@@ -182,6 +207,10 @@ if query:
         st.divider()
         st.subheader(f"{name}  ({raw_code})")
 
+        # ===== 매매거래정지 여부 (모든 분류보다 먼저 표시) =====
+        if code6 in halt_map:
+            st.error(f"⛔ **현재 매매거래정지 상태** — 사유: {halt_map[code6]}")
+
         in_rank = code6 in rank_by_code.index
         is_risky = (in_rank and bool(rank_by_code.loc[code6].get('위험발생', False))) \
             or code6 in risky_codes
@@ -197,7 +226,7 @@ if query:
             # 하위호환 경로: 통합 랭킹이 없어 대조군 점수가 없는 경우
             st.warning("📘 **학습 대조군**\n\n"
                        "이 기업은 모델 학습의 대조군으로 사용되었습니다. "
-                       "`python 4_predict.py`를 실행하면 교차검증 점수가 표시됩니다.")
+                       "`python B_3_predict.py`를 실행하면 교차검증 점수가 표시됩니다.")
             st.divider()
             show_flagged(code6)
         else:
@@ -220,7 +249,7 @@ else:
     pool = pending
     if only_flagged:
         pool = pool[pool['종목코드'].isin(flagged_codes)]
-        st.subheader(f"위험도 상위 {n}개 (위험 경영진 포함 기업 중)")
+        st.subheader(f"위험도 상위 {n}개 (위험 경영진 포함 기업 중, 재직 {ybe}년 이내)")
     else:
         st.subheader(f"위험도 상위 {n}개 기업")
 
@@ -235,6 +264,8 @@ else:
         return int(flagged_idx.loc[code]['위험인물수'])
 
     topn['위험경영진'] = topn['종목코드'].apply(exec_count)
-    topn = topn[['회사명', '종목코드', '위험도%', '위험경영진']].reset_index(drop=True)
+    # 거래정지 여부 표시 (목록에서도 한눈에)
+    topn['거래정지'] = topn['종목코드'].apply(lambda c: '⛔' if c in halt_map else '')
+    topn = topn[['회사명', '종목코드', '위험도%', '위험경영진', '거래정지']].reset_index(drop=True)
     topn.index = topn.index + 1
     st.dataframe(topn, use_container_width=True)

@@ -1,16 +1,20 @@
 """
 3_감시_리스트.py — 양대 신호 감시 리스트 (통합앱 페이지)
 
-'아직 위험이 확정되지 않았고(실질심사 대상 아님), 매매거래정지도 아닌' 기업 중
+'아직 위험이 확정되지 않았고(실질심사 대상 아님), 사고성 매매거래정지도 아닌' 기업 중
 두 신호가 동시에 켜진 곳을 보여준다.
   신호 1: 위험도 점수 상위 (교차검증 기반 통합 랭킹, data/risk_ranking_all.csv)
   신호 2: 부실기업 출신 경영진 재직 (네트워크 매칭, 재직시점 창 조절 가능)
 
-[근거 — 신호 검증 결과 요약 (11_validate_signals.py)]
+[근거 — 신호 검증 결과 요약 (B_4_validate_signals.py)]
 매매거래정지 목록(무관사유·학습기업 제외)을 정답으로 한 lift 검증:
-  위험도 상위 단독 ≈ 8~9배 / 위험경영진 단독 ≈ 3.5배 / 결합 ≈ 14~16배
+  위험도 상위 단독 약 8.4배 / 위험경영진 단독 약 3.5배 / 결합 약 12배
   (재직 창 3~5년 구간이 최적, 7년 이상은 하락)
 → 결합 신호가 가장 정밀하므로 이 페이지는 '두 신호 동시 발생'을 기본으로 본다.
+
+거래정지 처리: 주식 병합·스팩 합병 등 위험과 무관한 정상 절차 정지는
+제외로 치지 않는다(B_4 검증과 동일 기준). 사고성 정지(상장폐지 사유발생,
+투자자 보호 등)만 감시 목록에서 빼고, 하단 '적중 사례'로 따로 보여준다.
 """
 import os
 import pandas as pd
@@ -18,15 +22,23 @@ import streamlit as st
 
 # pages 폴더 안에서 실행 → 두 단계 위가 프로젝트 루트
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "network_analysis/data")
+DATA = os.path.join(ROOT, "data")
 
 FEATURE_COLS = ['n_shareholder_change', 'n_capital_increase', 'n_cb', 'n_collateral']
+
+# 위험과 무관한 정상 절차 정지 — 제외/적중으로 치지 않음 (B_4와 동일 기준)
+IRRELEVANT_HALT = [
+    'SPAC 합병(예비심사청구대상)',
+    '주식의 병합, 분할 등 전자등록 변경, 말소',
+    '조회공시 신고시한 위반',
+    '투자경고 및 위험',
+]
 
 
 @st.cache_data
 def load():
     # ── 위험도: 통합 랭킹 우선, 없으면 예측대상만(하위호환) ──
-    all_path = os.path.join(ROOT, "data/risk_ranking_all.csv")
+    all_path = os.path.join(DATA, "risk_ranking_all.csv")
     use_unified = os.path.exists(all_path)
     if use_unified:
         ranking = pd.read_csv(all_path, dtype={'종목코드': str})
@@ -36,7 +48,7 @@ def load():
         else:
             ranking['위험발생'] = False
     else:
-        ranking = pd.read_csv(os.path.join(ROOT, "data/risk_ranking_no_embezzle.csv"),
+        ranking = pd.read_csv(os.path.join(DATA, "risk_ranking_no_embezzle.csv"),
                               dtype={'종목코드': str})
         ranking['종목코드'] = ranking['종목코드'].str.zfill(6)
         ranking['순위'] = ranking['risk_score'].rank(ascending=False, method='min').astype(int)
@@ -53,7 +65,7 @@ def load():
                             dtype={'종목코드': str})
     reason_map = dict(zip(risky_set['회사명'], risky_set['실질심사사유']))
 
-    # ── 매매거래정지 목록 (있으면 제외에 사용, 없으면 경고만) ──
+    # ── 매매거래정지 목록 (있으면 사용, 없으면 경고만) ──
     try:
         halt = pd.read_html(os.path.join(ROOT, "input_files/매매거래정지종목.xls"),
                             encoding='euc-kr')[0]
@@ -74,7 +86,7 @@ st.caption("위험 미확정(실질심사 대상 아님) + 미(未)거래정지 
 
 if not use_unified:
     st.warning("통합 랭킹(risk_ranking_all.csv)이 없어 예측대상만으로 표시합니다. "
-               "`python 4_predict.py` 실행을 권장합니다.")
+               "`python B_3_predict.py` 실행을 권장합니다.")
 if not halt_ok:
     st.warning("`input_files/매매거래정지종목.xls` 가 없어 이미 거래정지된 종목이 "
                "목록에 섞일 수 있습니다. KIND에서 받아 넣어주세요.")
@@ -93,7 +105,9 @@ exec_codes = set(m['종목코드'])
 
 pending = ranking[~ranking['위험발생']].copy()
 pending['거래정지'] = pending['종목코드'].map(halt_map)
-alive = pending[pending['거래정지'].isna()]
+# 사고성 정지만 목록에서 제외 (병합·스팩 등 정상 절차 정지는 감시 대상 유지)
+사고성정지 = pending['거래정지'].notna() & ~pending['거래정지'].isin(IRRELEVANT_HALT)
+alive = pending[~사고성정지]
 
 watch = alive[
     (alive['백분위'] <= pct_th) &
@@ -107,6 +121,39 @@ c3.metric("위험도 기준", f"상위 {pct_th}%")
 
 st.divider()
 
+# ===== 참고: 위험인물 없는 위험도 최상위 =====
+with st.expander("참고 — 위험인물은 없지만 위험도 최상위 (상위 2%)"):
+    solo = alive[(alive['백분위'] <= 2) & (~alive['종목코드'].isin(exec_codes))]
+    solo = solo.sort_values('risk_score', ascending=False)
+    if len(solo) == 0:
+        st.write("해당 없음")
+    else:
+        t = solo[['회사명', '종목코드', 'risk_score', '백분위']].copy()
+        t['위험도%'] = (t['risk_score'] * 100).round(1)
+        t = t[['회사명', '종목코드', '위험도%', '백분위']].reset_index(drop=True)
+        t.index = t.index + 1
+        st.dataframe(t, use_container_width=True)
+    st.caption("위험도 단독으로도 lift 약 8.4배의 강한 신호입니다. "
+               "경영진 매칭이 없을 뿐 공시 지표는 극단적인 기업들입니다.")
+
+# ===== 적중 사례: 이미 사고성 거래정지된 양신호 기업 =====
+with st.expander("⛔ 이미 거래정지된 양신호 기업 — 모델 적중 사례"):
+    halted = pending[사고성정지]
+    hit = halted[(halted['백분위'] <= pct_th) & (halted['종목코드'].isin(exec_codes))]
+    hit = hit.sort_values('risk_score', ascending=False)
+    if len(hit) == 0:
+        st.write("해당 없음")
+    for _, r in hit.iterrows():
+        persons = m[m['종목코드'] == r['종목코드']]['인물'].unique()
+        st.markdown(f"**{r['회사명']}** ({r['종목코드']}) — "
+                    f"위험도 {r['risk_score']*100:.1f}% (상위 {r['백분위']}%) · "
+                    f"👤 {', '.join(persons)}")
+        st.caption(f"　⛔ 정지 사유: {r['거래정지']}")
+    st.caption("감시 조건(위험도 상위 + 위험인물 재직)에 해당하면서 실제로 사고성 "
+               "거래정지된 기업. 두 신호 결합의 실제 적중 사례입니다. "
+               "(주식 병합 등 정상 절차 정지는 적중으로 치지 않음)")
+
+
 if len(watch) == 0:
     st.info("조건에 맞는 기업이 없습니다. 기준을 완화해 보세요.")
 
@@ -114,6 +161,10 @@ for _, r in watch.iterrows():
     code = r['종목코드']
     score = r['risk_score'] * 100
     st.markdown(f"### {r['회사명']}  ({code})")
+
+    # 정상 절차 정지 중이면 참고 표시 (감시 대상에서는 유지)
+    if pd.notna(r.get('거래정지')):
+        st.info(f"ℹ️ 일시 거래정지 중 (정상 절차) — {r['거래정지']}")
 
     k1, k2, k3 = st.columns(3)
     k1.metric("위험도", f"{score:.1f}%")
@@ -142,23 +193,9 @@ for _, r in watch.iterrows():
                     f"사유발생 {int(p['years_before_event'])}년 전 재직")
     st.divider()
 
-# ===== 참고: 위험인물 없는 위험도 최상위 =====
-with st.expander("참고 — 위험인물은 없지만 위험도 최상위 (상위 2%)"):
-    solo = alive[(alive['백분위'] <= 2) & (~alive['종목코드'].isin(exec_codes))]
-    solo = solo.sort_values('risk_score', ascending=False)
-    if len(solo) == 0:
-        st.write("해당 없음")
-    else:
-        t = solo[['회사명', '종목코드', 'risk_score', '백분위']].copy()
-        t['위험도%'] = (t['risk_score'] * 100).round(1)
-        t = t[['회사명', '종목코드', '위험도%', '백분위']].reset_index(drop=True)
-        t.index = t.index + 1
-        st.dataframe(t, use_container_width=True)
-    st.caption("위험도 단독으로도 lift 8~9배의 강한 신호입니다. "
-               "경영진 매칭이 없을 뿐 공시 지표는 극단적인 기업들입니다.")
 
-st.caption("※ 검증 근거: 매매거래정지 정답 기준 lift — 위험도 단독 8~9배, "
-           "경영진 단독 3.5배, 결합 14~16배 (11_validate_signals.py). "
+st.caption("※ 검증 근거: 매매거래정지 정답 기준 lift — 위험도 단독 약 8.4배, "
+           "경영진 단독 약 3.5배, 결합 약 12배 (B_4_validate_signals.py). "
            "거래정지 목록은 다운로드 시점의 스냅샷이므로 주기적 갱신이 필요합니다.")
 st.caption("※ 본 결과는 공개 공시 데이터 기반의 의심 정황 선별이며, "
            "특정 기업·개인의 위법을 단정하지 않습니다. 추가 검토용 참고 자료입니다.")
