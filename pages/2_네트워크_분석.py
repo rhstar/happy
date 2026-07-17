@@ -13,7 +13,7 @@ import tempfile
 
 # pages 폴더 안에서 실행 → 두 단계 위가 루트
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "network_analysis/data")
+DATA = os.path.join(ROOT, "data")
 
 
 @st.cache_data
@@ -99,7 +99,7 @@ def status_label(name, code):
     return prefix + "예측대상 외"
 
 
-st.title("🕸️ 위험기업 경영진 네트워크 탐색")
+st.title("위험기업 경영진 네트워크 탐색")
 st.caption("실질심사 위험군(2013~) · 실질 경영진 기준(사외이사·감사 제외)")
 
 st.sidebar.header("네트워크 필터")
@@ -133,8 +133,8 @@ if net_type == "핵심 인물 분석":
         note = f"재직 시점 필터(사유발생 {ybe}년 이내) 적용"
     else:
         sub = persons
-        note = ("⚠️ 재직시점별 사전계산 파일 없음 — 전체 기간으로 표시. "
-                "`python network_analysis/analyze_persons.py` 실행 시 시점 필터 반영")
+        note = ("재직시점별 사전계산 파일 없음 — 전체 기간으로 표시. "
+                "`python C_5_analyze_persons.py` 실행 시 시점 필터 반영")
 
     max_c = int(sub['위험기업수'].max()) if len(sub) else 1
     min_companies = st.slider("최소 위험기업 수", 1, max(max_c, 1), 1)

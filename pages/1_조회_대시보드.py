@@ -102,12 +102,12 @@ reason_map = dict(zip(risky_set['종목코드'], risky_set['실질심사사유']
 rank_by_code = ranking.set_index('종목코드')
 flagged_codes = set(flagged['종목코드']) if len(flagged) else set()
 
-st.title("📊 코스닥 위험 조회")
+st.title("코스닥 위험 조회")
 cap = ("코스닥 보통주 대상 (스팩·우선주 제외) · "
        "위험도: 교차검증 기반 전체 상장사 점수 · "
        f"위험경영진: 네트워크(2013~), 재직 {ybe}년 이내")
 if not use_unified:
-    cap += "  ⚠️ 통합 랭킹 미생성 — `python B_3_predict.py` 실행 시 대조군까지 점수화"
+    cap += "  통합 랭킹 미생성 — `python B_3_predict.py` 실행 시 대조군까지 점수화"
 st.caption(cap)
 
 mode = st.radio("조회 방식", ["종목명 검색", "목록에서 선택"], horizontal=True)
@@ -124,7 +124,7 @@ else:
 def show_flagged(code6):
     eh = flagged[flagged['종목코드'] == code6] if len(flagged) else flagged
     if len(eh) == 0:
-        st.success(f"✅ 부실기업 출신 경영진이 발견되지 않았습니다. (재직 {ybe}년 이내 기준)")
+        st.success(f"부실기업 출신 경영진이 발견되지 않았습니다. (재직 {ybe}년 이내 기준)")
         return
     er = eh.iloc[0]
     n = int(er['위험인물수'])
@@ -216,7 +216,7 @@ if query:
             or code6 in risky_codes
 
         if crow['is_spac']:
-            st.info("🚫 **스팩(SPAC)** 은 분석 대상이 아닙니다.\n\n"
+            st.info("**스팩(SPAC)** 은 분석 대상이 아닙니다.\n\n"
                     "스팩은 기업 인수를 목적으로 설립된 페이퍼컴퍼니로, 통상적 영업·공시 지표가 적용되지 않습니다.")
         elif is_risky:
             show_already_risk(code6)
@@ -224,13 +224,13 @@ if query:
             show_score(code6)
         elif code6 in control_codes:
             # 하위호환 경로: 통합 랭킹이 없어 대조군 점수가 없는 경우
-            st.warning("📘 **학습 대조군**\n\n"
+            st.warning("**학습 대조군**\n\n"
                        "이 기업은 모델 학습의 대조군으로 사용되었습니다. "
                        "`python B_3_predict.py`를 실행하면 교차검증 점수가 표시됩니다.")
             st.divider()
             show_flagged(code6)
         else:
-            st.info("ℹ️ 이 종목은 분석 대상에 포함되지 않았습니다.\n\n"
+            st.info("이 종목은 분석 대상에 포함되지 않았습니다.\n\n"
                     "우선주이거나, 공시 데이터 수집에 실패했거나, 최근 상장되어 관찰 기간이 부족할 수 있습니다.")
 
         st.divider()

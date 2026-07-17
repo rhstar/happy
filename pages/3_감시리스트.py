@@ -80,7 +80,7 @@ def load():
 
 ranking, matches, reason_map, halt_map, halt_ok, use_unified = load()
 
-st.title("🎯 감시 리스트 — 두 신호 동시 발생")
+st.title("감시 리스트 — 두 신호 동시 발생")
 st.caption("위험 미확정(실질심사 대상 아님) + 미(未)거래정지 기업 중, "
            "위험도 상위 AND 부실기업 출신 경영진 재직이 동시에 켜진 곳")
 
@@ -164,7 +164,7 @@ for _, r in watch.iterrows():
 
     # 정상 절차 정지 중이면 참고 표시 (감시 대상에서는 유지)
     if pd.notna(r.get('거래정지')):
-        st.info(f"ℹ️ 일시 거래정지 중 (정상 절차) — {r['거래정지']}")
+        st.info(f"일시 거래정지 중 (정상 절차) — {r['거래정지']}")
 
     k1, k2, k3 = st.columns(3)
     k1.metric("위험도", f"{score:.1f}%")

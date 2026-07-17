@@ -1,5 +1,8 @@
 """
 2_네트워크_분석.py — 위험기업 경영진 네트워크 탐색 (통합앱 페이지)
+
+매매거래정지 여부: input_files/매매거래정지종목.xls 가 있으면
+현재 상장사의 상태 표기(status)에 '⛔거래정지'를 함께 표시한다.
 """
 import pandas as pd
 import networkx as nx
@@ -10,7 +13,7 @@ import tempfile
 
 # pages 폴더 안에서 실행 → 두 단계 위가 루트
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "network_analysis/data")
+DATA = os.path.join(ROOT, "data")
 
 
 @st.cache_data
@@ -60,10 +63,21 @@ def load():
     dataset = pd.read_csv(os.path.join(ROOT, "data/dataset.csv"), dtype={'종목코드': str})
     dataset['종목코드'] = dataset['종목코드'].str.zfill(6)
 
-    return execs, group_map, matches, persons, persons_by_ybe, ranking, dataset, reason_map
+    # ===== 매매거래정지 목록 (있으면 상태 표기에 반영, 없으면 생략) =====
+    try:
+        halt = pd.read_html(os.path.join(ROOT, "input_files/매매거래정지종목.xls"),
+                            encoding='euc-kr')[0]
+        halt['종목코드'] = halt['종목코드'].astype(str).str.zfill(6)
+        halt_map = dict(zip(halt['종목코드'], halt['사유'].astype(str)))
+    except Exception:
+        halt_map = {}
+
+    return (execs, group_map, matches, persons, persons_by_ybe,
+            ranking, dataset, reason_map, halt_map)
 
 
-execs, group_map, matches, persons, persons_by_ybe, ranking, dataset, reason_map = load()
+(execs, group_map, matches, persons, persons_by_ybe,
+ ranking, dataset, reason_map, halt_map) = load()
 
 risk_by_code = ranking.set_index('종목코드')[['risk_score', '백분위']].to_dict('index')
 train_risky = set(dataset[dataset['label'] == 1]['종목코드'])
@@ -72,19 +86,20 @@ train_control = set(dataset[dataset['label'] == 0]['종목코드'])
 
 def status_label(name, code):
     code = str(code).zfill(6)
+    prefix = "⛔거래정지 · " if code in halt_map else ""
     info = risk_by_code.get(code)
     if info:
-        return f"위험도 {info['risk_score']*100:.1f}%, 상위 {info['백분위']}%"
+        return f"{prefix}위험도 {info['risk_score']*100:.1f}%, 상위 {info['백분위']}%"
     if code in train_risky:
-        return "실질심사 위험군"
+        return prefix + "실질심사 위험군"
     if code in train_control:
-        return "학습 대조군"
+        return prefix + "학습 대조군"
     if '스팩' in str(name):
-        return "스팩"
-    return "예측대상 외"
+        return prefix + "스팩"
+    return prefix + "예측대상 외"
 
 
-st.title("🕸️ 위험기업 경영진 네트워크 탐색")
+st.title("위험기업 경영진 네트워크 탐색")
 st.caption("실질심사 위험군(2013~) · 실질 경영진 기준(사외이사·감사 제외)")
 
 st.sidebar.header("네트워크 필터")
@@ -100,8 +115,8 @@ year_range = (int(execs['사유발생연도'].min()), int(execs['사유발생연
 
 # 재직 시점 필터(사유발생 N년 이내)는 유지 — 핵심 인물 분석 포함 모든 뷰에 적용.
 max_ybe = int(execs['years_before_event'].max())
-ybe = st.sidebar.slider("재직 시점 (사유발생 N년 이내)", 0, max_ybe, max_ybe,
-                        help="0이면 사유발생 시점 재직자만. 클수록 과거 재직자까지 포함.")
+ybe = st.sidebar.slider("재직 시점 (사유발생 N년 이내)", 0, max_ybe, min(5, max_ybe),
+                        help="검증 결과 3~5년 정점. 기본 5년, 넓게 보려면 조절.")
 
 all_groups = sorted(set(group_map.values()))
 group_options = ["전체"] + [f"그룹 {g}" for g in all_groups]
@@ -118,8 +133,8 @@ if net_type == "핵심 인물 분석":
         note = f"재직 시점 필터(사유발생 {ybe}년 이내) 적용"
     else:
         sub = persons
-        note = ("⚠️ 재직시점별 사전계산 파일 없음 — 전체 기간으로 표시. "
-                "`python network_analysis/analyze_persons.py` 실행 시 시점 필터 반영")
+        note = ("재직시점별 사전계산 파일 없음 — 전체 기간으로 표시. "
+                "`python C_5_analyze_persons.py` 실행 시 시점 필터 반영")
 
     max_c = int(sub['위험기업수'].max()) if len(sub) else 1
     min_companies = st.slider("최소 위험기업 수", 1, max(max_c, 1), 1)
@@ -171,7 +186,9 @@ if net_type == "현재기업별 위험인물":
     ).reset_index()
     agg = agg[agg['위험인물수'] >= min_persons].sort_values('위험인물수', ascending=False)
 
-    st.caption(f"{len(agg)}개 기업 (위험인물 {min_persons}명 이상)")
+    st.caption(f"{len(agg)}개 기업 (위험인물 {min_persons}명 이상) · "
+               "인물 수가 많다고 반드시 더 위험한 것은 아닙니다 — 그룹 계열사 겸직(정상 경영)일 수 "
+               "있으니 위험도와 궤적을 함께 확인하세요.")
 
     for _, r in agg.iterrows():
         status = status_label(r['현재기업'], r['종목코드'])
@@ -251,12 +268,15 @@ else:
             added.add(risk_co)
         if cur_co not in added:
             status = status_label(cur_co, r['종목코드'])
-            net.add_node(cur_co, label=cur_co, color="#4A90D9", size=14,
+            # 거래정지 상태인 현재기업은 노드 색으로도 구분 (검정 테두리 느낌의 진회색)
+            cur_color = "#7A7A7A" if str(r['종목코드']).zfill(6) in halt_map else "#4A90D9"
+            net.add_node(cur_co, label=cur_co, color=cur_color, size=14,
                          title=f"현재 상장사: {cur_co} ({status})", shape="square")
             added.add(cur_co)
         net.add_edge(risk_co, cur_co, title=f"{r['인물']} ({r['years_before_event']}년 전)")
 
-    st.subheader(f"확산 네트워크 — 매칭 {len(m)}건 (빨강=위험기업, 파랑=현재 상장사)")
+    st.subheader(f"확산 네트워크 — 매칭 {len(m)}건 "
+                 f"(빨강=위험기업, 파랑=현재 상장사, 회색=거래정지된 현재기업)")
 
 if len(net.nodes) == 0:
     st.warning("조건에 맞는 네트워크가 없습니다. 필터를 완화해 보세요.")

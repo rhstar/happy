@@ -4,6 +4,7 @@ docs_cache/
 data/
 old/
 lib/
+실행패키지/
 network_analysis/data/
 network_analysis/docs_cache
 data/executive_matches.csv
